@@ -1,4 +1,5 @@
-package net.ezra.ui.about
+package net.ezra.ui.contact
+
 
 import android.content.res.Configuration
 import androidx.compose.foundation.clickable
@@ -14,41 +15,40 @@ import androidx.navigation.NavHostController
 import androidx.navigation.compose.rememberNavController
 import net.ezra.R
 import net.ezra.navigation.ROUTE_ABOUT
+import net.ezra.navigation.ROUTE_CONTACT
 import net.ezra.navigation.ROUTE_HOME
 import net.ezra.ui.theme.AppTheme
 
 
 
 @Composable
-fun AboutScreen(navController: NavHostController) {
-
-
-
-
+fun ContactScreen(navController: NavHostController) {
     Column {
-        Text(text = "about")
 
-        Text(text = stringResource(id = R.string.mit))
 
-        Text(
-            modifier = Modifier
+    Text(text = "this is the contact page")
 
-                .clickable {
-                    navController.navigate(ROUTE_HOME) {
-                        popUpTo(ROUTE_ABOUT) { inclusive = true }
-                    }
-                },
-            text = "Home",
-            textAlign = TextAlign.Center,
-            color = MaterialTheme.colorScheme.onSurface
-        )
+    Text(
+        modifier = Modifier
+            .clickable {
+                navController.navigate(ROUTE_HOME) {
+                    popUpTo(ROUTE_CONTACT) { inclusive = true }
+                }
+            },
+        text = "Contact"
+    )
+
+
+
+
+
+
     }
-
 }
 
 @Preview(showBackground = true, uiMode = Configuration.UI_MODE_NIGHT_NO)
 @Composable
 fun HomeScreenPreviewLight() {
-    AboutScreen(rememberNavController())
+    ContactScreen(rememberNavController())
 }
 

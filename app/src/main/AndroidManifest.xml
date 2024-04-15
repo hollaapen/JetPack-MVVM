@@ -3,7 +3,10 @@
     xmlns:tools="http://schemas.android.com/tools"
     package="net.ezra">
 
-    <uses-permission android:name="android.permission.INTERNET"/>
+    <!--Permissions for internet-->
+    <uses-permission android:name="android.permission.INTERNET" />
+    <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
+
 
     <application
         android:name="net.ezra.FirebaseAuthApp"

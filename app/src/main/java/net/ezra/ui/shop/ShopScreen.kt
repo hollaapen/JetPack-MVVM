@@ -1,4 +1,5 @@
-package net.ezra.ui.about
+package net.ezra.ui.shop
+
 
 import android.content.res.Configuration
 import androidx.compose.foundation.clickable
@@ -15,33 +16,39 @@ import androidx.navigation.compose.rememberNavController
 import net.ezra.R
 import net.ezra.navigation.ROUTE_ABOUT
 import net.ezra.navigation.ROUTE_HOME
+import net.ezra.navigation.ROUTE_SERVICES
+import net.ezra.navigation.ROUTE_SHOP
 import net.ezra.ui.theme.AppTheme
 
 
 
 @Composable
-fun AboutScreen(navController: NavHostController) {
-
-
-
+fun ShopScreen(navController: NavHostController) {
 
     Column {
-        Text(text = "about")
-
+        
+        Text(text = "This is the shop screen")
+        
         Text(text = stringResource(id = R.string.mit))
 
         Text(
             modifier = Modifier
-
                 .clickable {
                     navController.navigate(ROUTE_HOME) {
-                        popUpTo(ROUTE_ABOUT) { inclusive = true }
+                        popUpTo(ROUTE_SHOP) { inclusive = true }
                     }
                 },
-            text = "Home",
+            text = "go to home screen",
             textAlign = TextAlign.Center,
             color = MaterialTheme.colorScheme.onSurface
         )
+
+
+
+
+
+
+       
     }
 
 }
@@ -49,6 +56,6 @@ fun AboutScreen(navController: NavHostController) {
 @Preview(showBackground = true, uiMode = Configuration.UI_MODE_NIGHT_NO)
 @Composable
 fun HomeScreenPreviewLight() {
-    AboutScreen(rememberNavController())
+    ShopScreen(rememberNavController())
 }
 
